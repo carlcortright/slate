@@ -59,23 +59,35 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 16px;
+  //font-size: 16px;
+  //font-weight: 400;
+  //font-family: "Karla";
+  //font-size: 15px;
+  //letter-spacing: -0.25pt;
+  //font-family: "Source Sans Pro";
 
   // language selector for mobile devices
   .lang-selector {
     display: none;
+    font-size: 13px;
     a {
       padding-top: 0.5em;
       padding-bottom: 0.5em;
+      font-size: 13px;
     }
   }
 
   // This is the logo at the top of the ToC
   .logo {
-    display: block;
-    max-width: 100%;
+    padding: 1rem $nav-padding 1.25rem;
+    border-bottom: 1px solid #f0f4f7;
     margin-bottom: $logo-margin;
+    margin-bottom: 1rem;
+    img {
+      display: block;
+      max-width: 187px;
+    }
   }
 
   &>.search {
@@ -141,7 +153,7 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 28px;
+    line-height: 34px;
   }
 
   li {
@@ -171,13 +183,13 @@ html, body {
 
   .toc-h2 {
     padding-left: $nav-padding + $nav-indent;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .toc-footer {
     padding: 1em 0;
     margin-top: 1em;
-    border-top: 1px dashed $nav-footer-border-color;
+    border-top: 1px solid $nav-footer-border-color;
 
     li,a {
       color: $nav-text;
@@ -252,9 +264,14 @@ html, body {
   position: relative;
   z-index: 10;
   background-color: $main-bg;
+  background: url('/images/bg.png') left -1rem no-repeat $main-bg;
+  background-size: 50%;
   min-height: 100%;
+  box-shadow: 0 0 0 1px #f0f4f7,
+              0 0 3px rgba(#f0f4f7, 0.33);
 
   padding-bottom: 1px; // prevent margin overflow
+  padding-top: 24px;
 
   // The dark box is what gives the code samples their dark background.
   // It sits essentially under the actual content block, which has a
@@ -281,22 +298,33 @@ html, body {
   background-color: $lang-select-bg;
   width: 100%;
   font-weight: bold;
+  padding: 10px 38px;
   a {
     display: block;
     float:left;
     color: $lang-select-text;
     text-decoration: none;
-    padding: 0 10px;
-    line-height: 30px;
+    padding: 7px 12px;
+    line-height: 1em;
     outline: 0;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 2px;
+    margin-right: 4px;
+    text-shadow: 0 1px 1px rgba(#000, 0.15), 0 1px 2px rgba(#000, 0.05);
+    transition: 0.15s all;
+
+    &:hover {
+      color: $nav-active-text;
+    }
 
     &:active, &:focus {
-      background-color: $lang-select-pressed-bg;
-      color: $lang-select-pressed-text;
+      background-color: $nav-active-text;
+      color: $lang-select-active-text;
     }
 
     &.active {
-      background-color: $lang-select-active-bg;
+      background-color: $nav-active-text;
       color: $lang-select-active-text;
     }
   }
@@ -346,14 +374,14 @@ html, body {
 
   h1 {
     @extend %header-font;
-    font-size: 25px;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    font-size: 34px;
+    font-weight: 300;
+    padding-top: 38px;
+    padding-bottom: 0.25rem;
     margin-bottom: $h1-margin-bottom;
-    margin-top: 2em;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    background-color: #fdfdfd;
+    margin-top: 48px;
+    border-top: 1px solid #f0f4f7;
+    //letter-spacing: -0.5pt;
   }
 
   h1:first-child, div:first-child + h1 {
@@ -363,13 +391,24 @@ html, body {
 
   h2 {
     @extend %header-font;
-    font-size: 19px;
+    font-size: 22px;
     margin-top: 4em;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
+    //border-top: 1px solid #f0f4f7;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
     background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
+  }
+
+  h3 {
+    @extend %header-font;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #959fa4;
+    font-weight: 600;
+    letter-spacing: 0.5pt;
+    margin-top: 3em;
+    margin-bottom: 1em;
   }
 
   // h2s right after h1s should bump right up
@@ -379,7 +418,7 @@ html, body {
     border-top: none;
   }
 
-  h3, h4, h5, h6 {
+  h4, h5, h6 {
     @extend %header-font;
     font-size: 15px;
     margin-top: 2.5em;
@@ -399,6 +438,7 @@ html, body {
   table {
     margin-bottom: 1em;
     overflow: auto;
+    font-size: 13px;
     th,td {
       text-align: left;
       vertical-align: top;
@@ -406,20 +446,37 @@ html, body {
       code {
         white-space: nowrap;
       }
+      &:last-child { width: 100%; }
     }
 
     th {
-      padding: 5px 10px;
-      border-bottom: 1px solid #ccc;
+      padding: 8px 1em;
       vertical-align: bottom;
+      font-weight: 400;
+      font-size: 13px;
+      white-space: nowrap;
+      color: #959fa4;
+      &:first-child {
+        text-align: right;
+        padding-left: 3em;
+      }
     }
 
     td {
-      padding: 10px;
+      padding: 1em;
     }
 
-    tr:last-child {
-      border-bottom: 1px solid #ccc;
+    tr {
+        border-bottom: 1px solid rgba(#959fa4, 0.11);
+    }
+    thead tr {
+      border-bottom: 1px solid rgba(#959fa4, 0.22);
+    }
+
+    tbody td:first-child {
+      font-weight: 600;
+      color: #111;
+      text-align: right;
     }
 
     tr:nth-child(odd)>td {
@@ -457,8 +514,13 @@ html, body {
   }
 
   pre>code {
-    background-color: transparent;
-    padding: 0;
+    // background-color: transparent;
+    // padding: 0;
+    background-color: $lang-select-bg;
+    padding: 22px 22px 22px 34px;
+    display: block;
+    border-radius: 4px;
+    overflow-x: scroll;
   }
 
   aside {
@@ -544,7 +606,7 @@ html, body {
   blockquote {
     &>p {
       background-color: $code-annotation-bg;
-      padding: $code-annotation-padding 2em;
+      padding: $code-annotation-padding $main-padding;
       color: #eee;
     }
   }
@@ -567,6 +629,7 @@ html, body {
 
   .page-wrapper {
     margin-left: 0;
+    background-position: left top;
   }
 
   #nav-button {
@@ -580,6 +643,11 @@ html, body {
 }
 
 @media (max-width: $phone-width) {
+  .page-wrapper {
+    background-size: 100%;
+    background-position: left top;
+  }
+
   .dark-box {
     display: none;
   }
@@ -611,5 +679,5 @@ html, body {
 }
 
 .highlight, .highlight .w {
-  background-color: $code-bg;
+  // background-color: $code-bg;
 }

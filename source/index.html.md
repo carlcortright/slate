@@ -2,19 +2,18 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+  - curl
+  - Ruby
+  - Python
+  - Javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='mailto:contact@paradex.io'>Contact us for an API key</a>
 
 includes:
   - errors
 
-search: true
+search: false
 ---
 
 # Introduction
@@ -236,4 +235,3 @@ This endpoint deletes a specific kitten.
 Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
-
