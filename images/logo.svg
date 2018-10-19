@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="24px" viewBox="0 0 25 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Fill 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="PDEX-Developers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Developers" transform="translate(-21.000000, -13.000000)" fill="#00E4BB">
+            <g id="left-nav">
+                <g id="Paradex-logo" transform="translate(21.000000, 13.000000)">
+                    <path d="M19.476204,17.496496 L15.444988,17.496496 C14.2198116,17.496496 12.8162265,17.9944144 11.7259576,18.6109804 L11.6221139,18.6696841 L17.1161862,1.89318316 C17.4684214,0.793876695 18.5974904,0.002617 19.8135619,0.002617 L25.0000309,0.00350287068 L19.476204,17.496496 Z M5.81527275,6.50436827 L9.57689982,6.50436827 C10.8021043,6.50436827 12.2064196,6.00602847 13.2967998,5.38942452 L13.4008496,5.33058782 L7.90513832,22.1115131 C7.55280945,23.2110388 6.42344036,24.002617 5.20692657,24.002617 L3.08788599e-05,24.002617 L5.81527275,6.50436827 Z" id="Fill-1"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
