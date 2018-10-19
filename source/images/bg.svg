@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="486px" height="114px" viewBox="0 0 486 114" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 17</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="PDEX-Developers" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.200000003">
+        <g id="Developers" transform="translate(-288.000000, -3.000000)">
+            <g id="Group-17" transform="translate(542.023306, 1.806531) rotate(-15.000000) translate(-542.023306, -1.806531) translate(291.023306, -120.193469)">
+                <path d="M135.173386,208.342589 L231.168483,208.342589" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M220.549404,152.860453 L290.495482,152.860453" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M315.163893,212.042689 L409.722769,212.042689" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M10.8303656,135.892111 L20.5115416,135.892111" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <text id="+" font-family="GothamRounded-Bold, Gotham Rounded" font-size="12" font-weight="bold" letter-spacing="0.3529412" fill="#35394A">
+                    <tspan x="459.830108" y="215.890618">+</tspan>
+                </text>
+                <text id="+" font-family="GothamRounded-Bold, Gotham Rounded" font-size="9" font-weight="bold" letter-spacing="0.2647059" fill="#35394A">
+                    <tspan x="43.1643894" y="169.662281">+</tspan>
+                </text>
+                <path d="M132.01302,181.817583 L136.229925,181.817583" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M332.941906,192.253558 L337.158811,192.253558" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M152.691089,125.76208 L156.907994,125.76208" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M342.81676,164.488362 L347.033665,164.488362" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M355.221645,164.568476 L359.43855,164.568476" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M367.626531,164.648589 L371.843436,164.648589" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M0.424471033,81.8147784 L4.64137606,81.8147784" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M19.0171586,81.6296786 L23.2340636,81.6296786" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M243.738073,125.716018 L254.887002,125.716018" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M86.7532477,98.2043965 L105.996787,98.2043965" id="Line-5" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M264.375568,234.23111 L283.619107,234.23111" id="Line-5-Copy" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M423.120991,192.963775 L442.36453,192.963775" id="Line-5-Copy-2" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M106.543714,125.638434 L125.787253,125.638434" id="Line-5-Copy-2" stroke="#35394A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                <ellipse id="Oval-5" stroke="#35394A" stroke-width="1.5" cx="65.202364" cy="111.051749" rx="3.19499993" ry="3.47365381"></ellipse>
+                <ellipse id="Oval-5" stroke="#35394A" stroke-width="1.5" cx="407.89555" cy="240.521154" rx="3.69727869" ry="4.03317671"></ellipse>
+                <ellipse id="Oval-5" stroke="#35394A" stroke-width="1.5" cx="296.951258" cy="191.599055" rx="4.69499993" ry="5.14460712"></ellipse>
+                <ellipse id="Oval-5" stroke="#35394A" stroke-width="1.5" cx="101.535995" cy="181.69351" rx="2.19500005" ry="2.35968507"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>

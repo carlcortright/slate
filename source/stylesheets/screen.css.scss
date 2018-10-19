@@ -30,10 +30,15 @@ html, body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   @extend %default-font;
   background-color: $main-bg;
   height: 100%;
   -webkit-text-size-adjust: none; /* Never autoresize text */
+}
+
+a {
+  transition: all 0.15s;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -49,7 +54,6 @@ html, body {
 
 .toc-wrapper {
   transition: left 0.3s ease-in-out;
-
   overflow-y: auto;
   overflow-x: hidden;
   position: fixed;
@@ -59,13 +63,12 @@ html, body {
   bottom: 0;
   width: $nav-width;
   background-color: $nav-bg;
-  font-size: 16px;
-  //font-size: 16px;
-  //font-weight: 400;
-  //font-family: "Karla";
-  //font-size: 15px;
-  //letter-spacing: -0.25pt;
-  //font-family: "Source Sans Pro";
+  box-shadow: 0 0 0 1px rgba(#000, 0.05),
+    inset -1px 0 0 rgba($gray, 0.03);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: $typeface-header;
+  padding-bottom: 120px;
 
   // language selector for mobile devices
   .lang-selector {
@@ -80,37 +83,68 @@ html, body {
 
   // This is the logo at the top of the ToC
   .logo {
-    padding: 1rem $nav-padding 1.25rem;
-    border-bottom: 1px solid #f0f4f7;
+    box-shadow: 0 1px 0 $sep-color;
     margin-bottom: $logo-margin;
-    margin-bottom: 1rem;
+    height: 50px;
+    position: relative;
+    box-sizing: border-box;
     img {
+      width: 25px;
+      height: 24px;
+      position: absolute;
+      top: 13px;
+      left: $nav-padding+1;
+    }
+    h1 {
+      letter-spacing: 3pt;
+      font-family: $typeface-header;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: bold;
+      border-left: 1px solid $sep-color;
+      font-size: 15px;
       display: block;
-      max-width: 187px;
+      line-height: 51px;
+      padding-left: $nav-padding;
+      box-sizing: border-box;
+      height: 50px;
+      margin: 0 0 0 #{$nav-padding*2 + 25px + 2px};
     }
   }
 
   &>.search {
     position: relative;
+    height: 50px;
+    box-sizing: border-box;
+    margin-top: 1px;
 
     input {
-      background: $nav-bg;
-      border-width: 0 0 1px 0;
-      border-color: $search-box-border-color;
-      padding: 6px 0 6px 20px;
+      background: rgba(#000, 0);
+      padding: $nav-padding $nav-padding $nav-padding $nav-padding+25px;
       box-sizing: border-box;
-      margin: $nav-v-padding $nav-padding;
-      width: $nav-width - ($nav-padding*2);
+      border: none;
+      margin: 0;
+      width: 100%;
       outline: none;
       color: $nav-text;
-      border-radius: 0; /* ios has a default border radius */
+      border-radius: 2px;
+      height: 50px;
+      &::placeholder {
+        color: rgba($gray, 0.33);
+        font-size: 12px;
+        letter-spacing: 1pt;
+        text-transform: uppercase;
+      }
+      &:focus, &:not(:placeholder-shown) {
+        background: rgba(#000, 0.1);
+      }
     }
 
     &:before {
       position: absolute;
       top: 17px;
       left: $nav-padding;
-      color: $nav-text;
+      color: rgba($gray, 0.33);
       @extend %icon-search;
     }
   }
@@ -119,20 +153,38 @@ html, body {
     margin-top: 0;
     box-sizing: border-box;
     height: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
     transition-property: height, margin;
     transition-duration: 180ms;
     transition-timing-function: ease-in-out;
-    background: $nav-subitem-bg;
+    background: rgba(#000, 0.1);
+    border-bottom: 1px solid $sep-color;
+    margin-bottom: 15px;
+    position: relative;
     &.visible {
+      //height: auto;
+      //max-height: 30%;
       height: 30%;
-      margin-bottom: 1em;
+      overflow-y: auto;
     }
 
     li {
       margin: 1em $nav-padding;
       line-height: 1;
+      &:first-child {
+        padding-top: 43px;
+      }
+      &:first-child:before {
+        position: absolute;
+        top: 0;
+        left: $nav-padding;
+        right: $nav-padding;
+        border-top: 1px solid $sep-color;
+        padding-top: $nav-padding;
+        padding-top: 26px;
+        content: 'Search Results';
+        @extend %tiny-header;
+      }
     }
 
     a {
@@ -153,7 +205,7 @@ html, body {
     list-style: none;
     margin: 0;
     padding: 0;
-    line-height: 34px;
+    line-height: 32px;
   }
 
   li {
@@ -175,25 +227,44 @@ html, body {
     color: $nav-active-parent-text;
   }
 
+  .toc-list-h1 {
+    &:before {
+      content: 'Table of Contents';
+      @extend %tiny-header;
+      padding: 0 $nav-padding 3px;
+    }
+  }
+
   .toc-list-h2 {
     display: none;
     background-color: $nav-subitem-bg;
     font-weight: 500;
+    margin-bottom: 6px;
+    border-left: 1px solid $sep-color;
+
+    li {
+      line-height: 28px;
+    }
   }
 
   .toc-h2 {
     padding-left: $nav-padding + $nav-indent;
-    font-size: 13px;
+    font-size: 12px;
   }
 
   .toc-footer {
     padding: 1em 0;
-    margin-top: 1em;
-    border-top: 1px solid $nav-footer-border-color;
+    margin-top: 30px;
+    border-top: 1px solid $sep-color;
 
     li,a {
-      color: $nav-text;
+      color: rgba($gray, 0.66);
       text-decoration: none;
+    }
+
+    h4 {
+      @extend %tiny-header;
+      margin: 1em 0;
     }
 
     a:hover {
@@ -201,9 +272,73 @@ html, body {
     }
 
     li {
-      font-size: 0.8em;
-      line-height: 1.7;
+      font-size: 12px;
+      line-height: 24px;
       text-decoration: none;
+    }
+  }
+
+  .nav-footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    width: $nav-width;
+    border-top: 1px solid $sep-color;
+    text-align: center;
+    line-height: 51px;
+    background: $nav-bg;
+    a {
+      text-decoration: none;
+    }
+  }
+  .nav-footer-link-contact {
+    flex-basis: 50%;
+    display: block;
+    height: 50px;
+    color: white;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    font-weight: bold;
+    box-shadow: 1px 0 0 $sep-color;
+    &:hover {
+      background-color: rgba(#000, 0.1);
+    }
+  }
+  .nav-footer-social {
+    flex-basis: 50%;
+    height: 50px;
+    line-height: 48px;
+    a {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      vertical-align: middle;
+      padding: 5px;
+      fill: rgba($gray, 0.44);
+      &:hover {
+        fill: rgba($gray, 1);
+      }
+    }
+  }
+  .nav-footer-link-hiring {
+    display: block;
+    height: 50px;
+    border-top: 1px solid $sep-color;
+    flex-grow: 1;
+    font-size: 11px;
+    letter-spacing: 1.5pt;
+    font-weight: bold;
+    color: rgba($gray, 0.75);
+    text-transform: uppercase;
+    background: url('/images/bg-small.svg') center center no-repeat;
+    background-size: 240px;
+    &:hover {
+      background-color: rgba(#000, 0.1);
+      color: #fff;
+      background-size: 320px;
     }
   }
 }
@@ -254,6 +389,46 @@ html, body {
   &.open {left: $nav-width}
 }
 
+.btn {
+  height: 34px;
+  line-height: 36px;
+  text-align: center;
+  margin: 6px 0 $nav-padding;
+  background: rgba(#353948, 0.85);
+  color: $gray !important;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: $typeface-header;
+  text-align: center;
+  display: block;
+  text-decoration: none !important;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(#000, 0.03),
+    inset 0 1px 0 rgba(#fff, 0.01),
+    inset 0 0 0 1px rgba(#fff, 0.01),
+    inset 0 25px 17px -8px rgba(#fff, 0.01);
+  &:hover {
+    background: rgba(#353948, 1);
+  }
+}
+.btn-api {
+  &:before {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+    background: url('/images/icon-bolt.svg') center center no-repeat;
+    background-size: contain;
+    content: '';
+  }
+  &:hover {
+    color: white !important;
+  }
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // PAGE LAYOUT AND CODE SAMPLE BACKGROUND
@@ -264,14 +439,14 @@ html, body {
   position: relative;
   z-index: 10;
   background-color: $main-bg;
-  background: url('/images/bg.png') left -1rem no-repeat $main-bg;
-  background-size: 50%;
+  background: url('/images/bg.svg') 40px 0 no-repeat $main-bg;
+  background-size: 580px;
   min-height: 100%;
   box-shadow: 0 0 0 1px #f0f4f7,
               0 0 3px rgba(#f0f4f7, 0.33);
 
-  padding-bottom: 1px; // prevent margin overflow
-  padding-top: 24px;
+  padding-bottom: 80px;
+  padding-top: 10px;
 
   // The dark box is what gives the code samples their dark background.
   // It sits essentially under the actual content block, which has a
@@ -285,47 +460,60 @@ html, body {
     right: 0;
     top: 0;
     bottom: 0;
+    box-shadow: -1px 0 0 rgba($gray, 0.01),
+      inset 1px 0 0 rgba(#000, 0.02);
   }
 
   .lang-selector {
     position: fixed;
     z-index: 50;
-    border-bottom: 5px solid $lang-select-active-bg;
+    border-bottom: 1px solid $lang-select-border;
   }
 }
 
 .lang-selector {
-  background-color: $lang-select-bg;
+  background-color: rgba($lang-select-bg, 0.66);
   width: 100%;
   font-weight: bold;
-  padding: 10px 38px;
+  padding: 12px $main-padding/2;
+  backdrop-filter: blur(4px);
+
   a {
+    z-index: 50;
     display: block;
     float:left;
     color: $lang-select-text;
     text-decoration: none;
-    padding: 7px 12px;
-    line-height: 1em;
+    padding: 0 8px;
+    //line-height: 1em;
     outline: 0;
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     border-radius: 2px;
     margin-right: 4px;
     text-shadow: 0 1px 1px rgba(#000, 0.15), 0 1px 2px rgba(#000, 0.05);
     transition: 0.15s all;
+    opacity: 0.55;
+    height: 24px;
+    line-height: 27px;
+    font-family: $typeface-header;
+    background: #353948;
+    box-shadow: 0 0 0 1px rgba(#000, 0.03),
+      inset 0 1px 0 rgba(#fff, 0.01),
+      inset 0 0 0 1px rgba(#fff, 0.01);
 
     &:hover {
-      color: $nav-active-text;
+      opacity: 0.75;
     }
 
     &:active, &:focus {
-      background-color: $nav-active-text;
       color: $lang-select-active-text;
+      opacity: 1;
     }
 
     &.active {
-      background-color: $nav-active-text;
       color: $lang-select-active-text;
+      opacity: 1;
     }
   }
 
@@ -347,6 +535,7 @@ html, body {
   // to place content above the dark box
   position: relative;
   z-index: 30;
+  //padding-left: 60px;
 
   &:after {
     content: '';
@@ -355,8 +544,10 @@ html, body {
   }
 
   &>h1, &>h2, &>h3, &>h4, &>h5, &>h6, &>p, &>table, &>ul, &>ol, &>aside, &>dl {
-    margin-right: $examples-width;
-    padding: 0 $main-padding;
+    //margin-right: $examples-width;
+    //padding: 0 $main-padding;
+    max-width: calc(#{100% - $examples-width} - #{$main-padding * 2});
+    margin-left: $main-padding;
     box-sizing: border-box;
     display: block;
 
@@ -372,15 +563,22 @@ html, body {
     clear:both;
   }
 
+  a {
+    color: #fff;
+    &:hover {
+      color: $green;
+    }
+  }
+
   h1 {
     @extend %header-font;
     font-size: 34px;
     font-weight: 300;
-    padding-top: 38px;
-    padding-bottom: 0.25rem;
     margin-bottom: $h1-margin-bottom;
-    margin-top: 48px;
-    border-top: 1px solid #f0f4f7;
+    line-height: 1em;
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: 1px solid $sep-color;
     //letter-spacing: -0.5pt;
   }
 
@@ -391,24 +589,25 @@ html, body {
 
   h2 {
     @extend %header-font;
-    font-size: 22px;
+    font-size: 24px;
     margin-top: 4em;
     margin-bottom: 0;
+    //font-weight: 400;
     //border-top: 1px solid #f0f4f7;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
-    background-image: linear-gradient(to bottom, rgba(#fff, 0.2), rgba(#fff, 0));
   }
 
   h3 {
     @extend %header-font;
     font-size: 13px;
     text-transform: uppercase;
-    color: #959fa4;
-    font-weight: 600;
-    letter-spacing: 0.5pt;
-    margin-top: 3em;
-    margin-bottom: 1em;
+    color: $gray;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1pt;
+    margin-top: 40px;
+    margin-bottom: 20px;
   }
 
   // h2s right after h1s should bump right up
@@ -436,9 +635,9 @@ html, body {
   }
 
   table {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     overflow: auto;
-    font-size: 13px;
+    font-size: 14px;
     th,td {
       text-align: left;
       vertical-align: top;
@@ -452,10 +651,11 @@ html, body {
     th {
       padding: 8px 1em;
       vertical-align: bottom;
-      font-weight: 400;
-      font-size: 13px;
+      font-weight: 500;
+      font-size: 12px;
+      font-family: $typeface-header;
       white-space: nowrap;
-      color: #959fa4;
+      color: rgba($gray, 0.66);
       &:first-child {
         text-align: right;
         padding-left: 3em;
@@ -467,24 +667,25 @@ html, body {
     }
 
     tr {
-        border-bottom: 1px solid rgba(#959fa4, 0.11);
+        border-bottom: 1px solid $sep-color;
     }
     thead tr {
-      border-bottom: 1px solid rgba(#959fa4, 0.22);
+      border-bottom: 1px solid $sep-color;
     }
 
     tbody td:first-child {
-      font-weight: 600;
-      color: #111;
+      font-weight: 500;
+      color: #FFF;
       text-align: right;
+      font-family: $typeface-header;
     }
 
     tr:nth-child(odd)>td {
-      background-color: lighten($main-bg,4.2%);
+      //background-color: lighten($main-bg,4.2%);
     }
 
     tr:nth-child(even)>td {
-      background-color: lighten($main-bg,2.4%);
+      //background-color: lighten($main-bg,2.4%);
     }
   }
 
@@ -506,18 +707,21 @@ html, body {
   }
 
   code {
-    background-color: rgba(0,0,0,0.05);
-    padding: 3px;
-    border-radius: 3px;
+    padding: 1px 3px 1px;
+    border-radius: 2px;
     @extend %break-words;
     @extend %code-font;
+  }
+  p code, aside code {
+    font-size: 13px;
+    background-color: rgba($gray, 0.07);
   }
 
   pre>code {
     // background-color: transparent;
     // padding: 0;
-    background-color: $lang-select-bg;
-    padding: 22px 22px 22px 34px;
+    background-color: $code-snippet-bg;
+    padding: 20px 20px 20px $main-padding/2;
     display: block;
     border-radius: 4px;
     overflow-x: scroll;
@@ -529,14 +733,26 @@ html, body {
     margin-top: 1.5em;
     margin-bottom: 1.5em;
     background: $aside-notice-bg;
-    line-height: 1.6;
+    line-height: 1.618;
+    border-radius: 2px;
+    font-size: 14px;
+    padding-left: $main-padding/2;
+    padding-right: $main-padding/2;
+    margin-left: $main-padding/2;
+    max-width: calc(#{100% - $examples-width} - #{$main-padding});
+    color: rgba($main-text, 0.75);
 
     &.warning {
-      background-color: $aside-warning-bg;
+      //background-color: $aside-warning-bg;
+      &:before {
+        color: #D83F89;
+      }
     }
 
     &.success {
-      background-color: $aside-success-bg;
+      //background-color: $aside-success-bg;
+      //box-shadow: 0 0 0 1px rgba($green, 0.66);
+      //box-shadow: inset 2px 0 0 rgba($green, 0.99);
     }
   }
 
@@ -544,6 +760,7 @@ html, body {
     vertical-align: middle;
     padding-right: 0.5em;
     font-size: 14px;
+    color: $green;
   }
 
   aside.notice:before {
@@ -559,11 +776,18 @@ html, body {
   }
 
   .search-highlight {
-    padding: 2px;
+    padding: 3px;
     margin: -3px;
-    border-radius: 4px;
-    border: 1px solid #F7E633;
-    background: linear-gradient(to top left, #F7E633 0%, #F1D32F 100%);
+    border-radius: 2px;
+    border-top: none;
+    border-bottom: none;
+    color: white;
+    text-shadow: 0 1px 1px rgba(#000, 0.05);
+    background: $blue;
+    box-shadow: 0 0 0 1px rgba(#000, 0.03),
+      inset 0 1px 0 rgba(#fff, 0.01),
+      inset 0 0 0 1px rgba(#fff, 0.01),
+      inset 0 25px 17px -8px rgba(#fff, 0.01);
   }
 }
 
@@ -575,7 +799,7 @@ html, body {
 .content {
   pre, blockquote {
     background-color: $code-bg;
-    color: #fff;
+    color: $main-text;
 
     margin: 0;
     width: $examples-width;
@@ -600,14 +824,14 @@ html, body {
     @extend %code-font;
     padding-top: 2em;
     padding-bottom: 2em;
-    padding: 2em $main-padding;
+    padding: 2em $main-padding/2;
   }
 
   blockquote {
     &>p {
       background-color: $code-annotation-bg;
-      padding: $code-annotation-padding $main-padding;
-      color: #eee;
+      padding: $code-annotation-padding $main-padding/2;
+      color: $main-text;
     }
   }
 }
