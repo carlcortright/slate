@@ -3,7 +3,7 @@
 
 ## Get Nonce
 
-```
+```shell
 curl "http://api.paradex.io/v2/nonce"
   -H "HTTP_API_KEY: <your-api-key>"
 ```
@@ -45,7 +45,7 @@ None
 
 ## Get Order Expiration Times
 
-```
+```shell
 curl "http://api.paradex.io/v2/expirations"
   -H "HTTP_API_KEY: <your-api-key>"
 ```
@@ -85,7 +85,7 @@ None
 
 ## Get Tokens
 
-```
+```shell
 curl "http://api.paradex.io/v2/tokens"
   -H "HTTP_API_KEY: <your-api-key>"
 ```
@@ -128,11 +128,10 @@ None
 
 ## Get Markets
 
-```
+```shell
 curl "http://api.paradex.io/v2/markets"
   -H "HTTP_API_KEY: <your-api-key>"
 ```
-
 
 ```javascript
 {
@@ -176,7 +175,7 @@ None
 
 ## Get OHLCV
 
-```
+```shell
 curl "http://api.paradex.io/v2/ohlcv?market=weth-zrx&period=1d&amount=100"
   -H "HTTP_API_KEY: <your-api-key>"
 ```
@@ -235,7 +234,7 @@ amount  | int | how many candles to be returned
 
 ## Get Ticker Snapshot
 
-```
+```shell
 curl "http://api.paradex.io/v2/ticker?market=weth-zrx"
   -H "HTTP_API_KEY: <your-api-key>"
 ```
@@ -281,7 +280,7 @@ market  | string | symbol of the market
 
 ## View Orderbook
 
-```
+```shell
 curl "http://api.paradex.io/v2/orderbook?market=rep-weth"
   -H "HTTP_API_KEY: <your-api-key>"
 ```
@@ -338,7 +337,7 @@ market  | string | symbol of the market
 
 ## List Open Orders
 
-```
+```shell
 curl "http://api.paradex.io/v2/orderbook?market=rep-weth"
   -H "HTTP_API_KEY: <your-api-key>"
 ```

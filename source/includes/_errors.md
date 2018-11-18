@@ -21,3 +21,12 @@ Error Code | Meaning
 113 | Not Authorized Account
 114 | Basic Authorization Required
 115 | Account Authorization Required
+118 | Payload Missing Field
+119 | Incorrect Field Format
+120 | Invalid Address
+121 | Address Not Supported
+122 | Value Out of Range
+123 | Invalid ECDSA or Hash
+124 | Unsupported Option
+125 | Address Unverified
+126 | Market Not Found

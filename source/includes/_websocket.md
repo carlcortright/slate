@@ -22,8 +22,8 @@
 
 Our websocket API is a powerful way to trade in real-time. It offers all the same endpoints as HTTP over a secure websocket connection, allowing traders to connect once and send as many requests as they need. Websockets follow the same standards of security as the HTTP API. A websocket request is a HTTP request parameters encoded in JSON. 
 
-Security for the websocket API is the same as the regular HTTP API, the only difference is how authentication requests are sent. 
+Security for the websocket API has the same levels as the regular HTTP API, the only difference is how authentication requests are sent. All basic access endpoints still require an API key, except on the websocket API the API key needs to be included in the payload under the name `api_key`. 
 
-```
-TODO: Document security for WS
-```
+Account access request are also similar to the http version. The only difference is that instead of putting the signature in the header, we add the payload signature to the request under the name `sig`. When packing and signing, only pack and sign the params, not any of the other data associated with the message.
+
+Throughout the rest of the documentation we will also be referencing examples for how to make websocket requests to each endpoint. 

@@ -3,9 +3,6 @@ title: Paradex API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - curl
-  - Ruby
-  - Python
-  - Javascript
 
 toc_footers:
   - <a href='https://paradex.io/developers' class='btn btn-api' target='_blank'>Get an API key</a>
@@ -26,6 +23,7 @@ includes:
 search: true
 ---
 
+# Potential TODOs
 
- 
+- Better payload packing docs
 
