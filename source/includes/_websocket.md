@@ -7,6 +7,8 @@
     'type': 'request', 
     'target': 'endpoint', 
     'method': 'GET', 
+    'api_key': '<your-api-key>',
+    'sig': '<payload-signature>',
     'params': {},
     'message_id': 1, 
 }

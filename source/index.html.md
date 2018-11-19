@@ -16,14 +16,11 @@ includes:
   - intro
   - auth
   - websocket
+  - pagination
   - endpoints
   - feeds
   - errors
 
 search: true
 ---
-
-# Potential TODOs
-
-- Better payload packing docs
 
