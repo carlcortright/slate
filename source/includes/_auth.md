@@ -34,4 +34,48 @@ curl "http://api.paradex.io/v2/<account-access-endpoint>"
 
 Once you have your secret key you can use it to authorize requests to account access endpoints. This is done by hashing the packed payload and signing it, including that signature in the `HTTP_API_SIG` header. These signatures are the same as ethereum personal signatures in web3.
 
+### Payload Signing
 
+```javascript
+
+// Example of payload signing in typescript
+
+import * as utils from "ethereumjs-util"
+
+let payload = {
+    market: 'REP/WETH'
+    state: 'all'
+    nonce: 1234567
+}
+
+let message = createMessage(payload); // returns 'marketnoncestateREP/WETH1234567all'
+
+let privateKey = '0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca';
+
+let sha = utils.hashPersonalMessage(Buffer.from(message));
+let signature = utils.ecsign(sha, utils.toBuffer(privateKey));
+let APISIG = utils.toRpcSig(signature.v, signature.r, signature.s);
+
+function createMessage(payload) {
+    let keys = Object.keys(payload).sort();
+    let message = keys.join("");
+    for (let key of keys) {
+        message += payload[key];
+    }
+    return message
+}
+```
+
+For all account access endpoints, the payload parameters need to be packed, hashed, signed, and submitted to the endpoint under the correct header. Payload signing is done by first concatenating all of the keys of the paylaod followed by concatenating all of the values. Below is an example of simple payload packing and signing.  
+
+<pre class="center-column-code">
+// payload to pack
+{
+    market: 'REP/WETH'
+    state: 'all'
+    nonce: 1234567
+}
+
+// Packed payload 
+'\u0019Ethereum Signed Message:\n34marketnoncestateREP/WETH1234567all'
+</pre>
