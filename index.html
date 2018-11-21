@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Paradex API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -199,10 +199,12 @@
     <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
     <link href="stylesheets/print.css" rel="stylesheet" media="print" />
       <script src="javascripts/all.js"></script>
+
+    <link href="images/logo.png" rel="icon" type="image/png" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700|Roboto+Mono:400" rel="stylesheet">
   </head>
 
-  <body class="index" data-languages="[&quot;curl&quot;,&quot;Ruby&quot;,&quot;Python&quot;,&quot;Javascript&quot;]">
+  <body class="index" data-languages="[&quot;curl&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -216,9 +218,6 @@
       </div>
         <div class="lang-selector">
               <a href="#" data-language-name="curl">curl</a>
-              <a href="#" data-language-name="Ruby">Ruby</a>
-              <a href="#" data-language-name="Python">Python</a>
-              <a href="#" data-language-name="Javascript">Javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -230,18 +229,88 @@
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#basic-access" class="toc-h2 toc-link" data-title="Basic Access">Basic Access</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#account-access" class="toc-h2 toc-link" data-title="Account Access">Account Access</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#payload-signing" class="toc-h2 toc-link" data-title="Payload Signing">Payload Signing</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#websocket-api" class="toc-h1 toc-link" data-title="Websocket API">Websocket API</a>
+          </li>
+          <li>
+            <a href="#pagination" class="toc-h1 toc-link" data-title="Pagination">Pagination</a>
+          </li>
+          <li>
+            <a href="#endpoints" class="toc-h1 toc-link" data-title="Endpoints">Endpoints</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-nonce" class="toc-h2 toc-link" data-title="Get Nonce">Get Nonce</a>
+                  </li>
+                  <li>
+                    <a href="#get-order-expiration-times" class="toc-h2 toc-link" data-title="Get Order Expiration Times">Get Order Expiration Times</a>
+                  </li>
+                  <li>
+                    <a href="#get-tokens" class="toc-h2 toc-link" data-title="Get Tokens">Get Tokens</a>
+                  </li>
+                  <li>
+                    <a href="#get-markets" class="toc-h2 toc-link" data-title="Get Markets">Get Markets</a>
+                  </li>
+                  <li>
+                    <a href="#get-ohlcv" class="toc-h2 toc-link" data-title="Get OHLCV">Get OHLCV</a>
+                  </li>
+                  <li>
+                    <a href="#get-ticker-snapshot" class="toc-h2 toc-link" data-title="Get Ticker Snapshot">Get Ticker Snapshot</a>
+                  </li>
+                  <li>
+                    <a href="#view-orderbook" class="toc-h2 toc-link" data-title="View Orderbook">View Orderbook</a>
+                  </li>
+                  <li>
+                    <a href="#trade-history" class="toc-h2 toc-link" data-title="Trade History">Trade History</a>
+                  </li>
+                  <li>
+                    <a href="#list-orders" class="toc-h2 toc-link" data-title="List Orders">List Orders</a>
+                  </li>
+                  <li>
+                    <a href="#get-order-by-id" class="toc-h2 toc-link" data-title="Get Order by ID">Get Order by ID</a>
+                  </li>
+                  <li>
+                    <a href="#list-order-trades" class="toc-h2 toc-link" data-title="List Order Trades">List Order Trades</a>
+                  </li>
+                  <li>
+                    <a href="#list-my-trades" class="toc-h2 toc-link" data-title="List My Trades">List My Trades</a>
+                  </li>
+                  <li>
+                    <a href="#balances" class="toc-h2 toc-link" data-title="Balances">Balances</a>
+                  </li>
+                  <li>
+                    <a href="#get-order-parameters" class="toc-h2 toc-link" data-title="Get Order Parameters">Get Order Parameters</a>
+                  </li>
+                  <li>
+                    <a href="#place-an-order" class="toc-h2 toc-link" data-title="Place an Order">Place an Order</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-orders" class="toc-h2 toc-link" data-title="Cancel Orders">Cancel Orders</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#feeds" class="toc-h1 toc-link" data-title="Feeds">Feeds</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#authentication" class="toc-h2 toc-link" data-title="Authentication">Authentication</a>
+                  </li>
+                  <li>
+                    <a href="#handling-subscriptions" class="toc-h2 toc-link" data-title="Handling Subscriptions">Handling Subscriptions</a>
+                  </li>
+                  <li>
+                    <a href="#avaliable-feeds" class="toc-h2 toc-link" data-title="Avaliable Feeds">Avaliable Feeds</a>
                   </li>
               </ul>
           </li>
@@ -253,9 +322,9 @@
             <li><a href='https://paradex.io/developers' class='btn btn-api' target='_blank'>Get an API key</a></li>
             <li><h4>Additional Resources</h4></li>
             <li><a href='mailto:contact@paradex.io'>Contact us</a></li>
-            <li><a href='mailto:contact@paradex.io'>Our Github</a></li>
-            <li><a href='mailto:contact@paradex.io'>0x Project Wiki</a></li>
-            <li><a href='mailto:contact@paradex.io'>0x Tracker</a></li>
+            <li><a href='https://github.com/coinbase'>Our Github</a></li>
+            <li><a href='https://0xproject.com/wiki'>0x Project Wiki</a></li>
+            <li><a href='https://0xtracker.com/'>0x Tracker</a></li>
         </ul>
       <div class="nav-footer">
         <a href="#" class="nav-footer-link-contact">Contact us</a>
@@ -264,197 +333,1105 @@
           <a href="https://twitter.com/ParadexIO"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a>
           <a href="https://medium.com/paradex"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z"/></svg></a>
         </div>
-        <a href="#" class="nav-footer-link-hiring">🎉 We're Hiring!</a>
+        <a href="https://coinbase.com/careers" class="nav-footer-link-hiring">🎉 We're Hiring!</a>
       </div>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+<p>Welcome to the Paradex API! The Paradex API is a powerful toolset used to interact with Paradex over http or websocket. </p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>It allows you to submit trades, view orders, view the orderbook for different markets and more. It&#39;s an ideal tool for automatically trading tokens directly from your wallet, making it easy for both beginners and experts to get started trading tokens.</p>
 <h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
+<p>The Paradex API has four levels of authentication, public access, basic access, account access, and private key access. Most of the time you will be working with basic access and account access as these protect most of the endpoints. </p>
+<h3 id='basic-access'>Basic Access</h3><pre class="highlight shell tab-shell"><code><span class="c"># Make a request with your api key</span>
+curl <span class="s2">"http://api.paradex.io/v2/nonce"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
 </code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
+<p>Basic access is used to any non-account endpoint. To query these endpoints you must include the <code>HTTP_API_KEY</code> header on your request that includes an API key generated for your account. Information about generating API keys can be found our our <a href="https://paradex.io/developers">API key page</a>. </p>
+<h3 id='account-access'>Account Access</h3><pre class="highlight shell tab-shell"><code><span class="c"># First get a secret from the get_secret endpoint</span>
+curl <span class="s2">"http://api.paradex.io/v2/get_secret"</span>
+ --data <span class="s2">"nonce=&lt;valid-nonce&gt;"</span>
+ -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+ -H <span class="s2">"HTTP_API_SIG: &lt;payload-signature&gt;"</span>
+</code></pre>
+<p>Account access is required for any action that changes or queries the state of your account. We do this to add an extra layer of security to keep your data and trades safe. In order to access endpoints protected by basic access you must first request a secret from the generate secret endpoint. This secret is used to sign any data sent to the Paradex API to verify you are the sender. </p>
+<pre class="highlight shell tab-shell"><code><span class="c"># Make a request using the secret retreived from the get secret endpoint</span>
+curl <span class="s2">"http://api.paradex.io/v2/&lt;account-access-endpoint&gt;"</span>
+ --data <span class="s2">"nonce=&lt;valid-nonce&gt;"</span>
+ -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+ -H <span class="s2">"HTTP_API_SIG: &lt;payload-signature-with-secret&gt;"</span>
+</code></pre>
+<p>Once you have your secret key you can use it to authorize requests to account access endpoints. This is done by hashing the packed payload and signing it, including that signature in the <code>HTTP_API_SIG</code> header. These signatures are the same as ethereum personal signatures in web3.</p>
+<h3 id='payload-signing'>Payload Signing</h3><pre class="highlight javascript tab-javascript"><code>
+<span class="c1">// Example of payload signing in typescript</span>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<span class="kr">import</span> <span class="o">*</span> <span class="nx">as</span> <span class="nx">utils</span> <span class="nx">from</span> <span class="s2">"ethereumjs-util"</span>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<span class="kd">let</span> <span class="nx">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">market</span><span class="p">:</span> <span class="s1">'REP/WETH'</span>
+    <span class="na">state</span><span class="p">:</span> <span class="s1">'all'</span>
+    <span class="na">nonce</span><span class="p">:</span> <span class="mi">1234567</span>
+<span class="p">}</span>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">createMessage</span><span class="p">(</span><span class="nx">payload</span><span class="p">);</span> <span class="c1">// returns 'marketnoncestateREP/WETH1234567all'</span>
+
+<span class="kd">let</span> <span class="nx">privateKey</span> <span class="o">=</span> <span class="s1">'0xabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabca'</span><span class="p">;</span>
+
+<span class="kd">let</span> <span class="nx">sha</span> <span class="o">=</span> <span class="nx">utils</span><span class="p">.</span><span class="nx">hashPersonalMessage</span><span class="p">(</span><span class="nx">Buffer</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">message</span><span class="p">));</span>
+<span class="kd">let</span> <span class="nx">signature</span> <span class="o">=</span> <span class="nx">utils</span><span class="p">.</span><span class="nx">ecsign</span><span class="p">(</span><span class="nx">sha</span><span class="p">,</span> <span class="nx">utils</span><span class="p">.</span><span class="nx">toBuffer</span><span class="p">(</span><span class="nx">privateKey</span><span class="p">));</span>
+<span class="kd">let</span> <span class="nx">APISIG</span> <span class="o">=</span> <span class="nx">utils</span><span class="p">.</span><span class="nx">toRpcSig</span><span class="p">(</span><span class="nx">signature</span><span class="p">.</span><span class="nx">v</span><span class="p">,</span> <span class="nx">signature</span><span class="p">.</span><span class="nx">r</span><span class="p">,</span> <span class="nx">signature</span><span class="p">.</span><span class="nx">s</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">createMessage</span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">keys</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">payload</span><span class="p">).</span><span class="nx">sort</span><span class="p">();</span>
+    <span class="kd">let</span> <span class="nx">message</span> <span class="o">=</span> <span class="nx">keys</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">""</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">key</span> <span class="nx">of</span> <span class="nx">keys</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">message</span> <span class="o">+=</span> <span class="nx">payload</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">message</span>
+<span class="p">}</span>
+</code></pre>
+<p>For all account access endpoints, the payload parameters need to be packed, hashed, signed, and submitted to the endpoint under the correct header. Payload signing is done by first concatenating all of the keys of the paylaod followed by concatenating all of the values. Below is an example of simple payload packing and signing.  </p>
+
+<pre class="center-column-code">
+// payload to pack
+{
+    market: 'REP/WETH'
+    state: 'all'
+    nonce: 1234567
+}
+
+// Packed payload 
+'\u0019Ethereum Signed Message:\n34marketnoncestateREP/WETH1234567all'
+</pre>
+<h1 id='websocket-api'>Websocket API</h1><pre class="highlight javascript tab-javascript"><code><span class="c1">// Example WS Request</span>
+<span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'endpoint'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span> 
+    <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+    <span class="s1">'sig'</span><span class="p">:</span> <span class="s1">'&lt;payload-signature&gt;'</span><span class="p">,</span>
+    <span class="s1">'params'</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="s1">'message_id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+<span class="p">}</span>
+
+<span class="c1">// Example WS Response</span>
+<span class="p">{</span>
+    <span class="s1">'message_id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span><span class="p">,</span>
+    <span class="s1">'status_code'</span><span class="p">:</span> <span class="s1">'200'</span><span class="p">,</span>
+    <span class="s1">'content'</span><span class="p">:</span> <span class="p">{</span><span class="c1">//Same as HTTP},</span>
+<span class="p">}</span>
+</code></pre>
+<p>Our websocket API is a powerful way to trade in real-time. It offers all the same endpoints as HTTP over a secure websocket connection, allowing traders to connect once and send as many requests as they need. Websockets follow the same standards of security as the HTTP API. A websocket request is a HTTP request parameters encoded in JSON. All requests to the Paradex Websocket API are made to the following route:</p>
+
+<p><code>api.paradex.io/wsapi/v1</code></p>
+
+<p>All websocket requests will include a <code>type</code>. This identifies either a wrapped http request or a subscription request to one of our <a href="https://developers.paradex.io/#feeds">feeds</a>. The result will also contain a <code>type</code> field, making it easy to filter responses returned over the websocket. </p>
+
+<p>Security for the websocket API has the same levels as the regular HTTP API, the only difference is how authentication requests are sent. All basic access endpoints still require an API key, except on the websocket API the API key needs to be included in the payload under the name <code>api_key</code>. </p>
+
+<p>Account access request are also similar to the http version. The only difference is that instead of putting the signature in the header, we add the payload signature to the request under the name <code>sig</code>. When packing and signing, only pack and sign the params, not any of the other data associated with the message.</p>
+
+<p>Throughout the rest of the documentation we will also be referencing examples for how to make websocket requests to each endpoint. </p>
+<h1 id='pagination'>Pagination</h1><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/orderbook?market=rep-weth&amp;cursor=2018-03-09T02:50:27Z&amp;per_page=75"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'orderbook'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+    <span class="s1">'params'</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s1">'market'</span><span class="p">:</span> <span class="s1">'rep-weth'</span><span class="p">,</span>
+      <span class="s1">'cursor'</span><span class="p">:</span> <span class="s1">'2018-03-09T02:50:27Z'</span><span class="p">,</span>
+      <span class="s1">'per_page'</span><span class="p">:</span> <span class="mi">75</span>
+    <span class="p">]</span>
+
+<span class="p">}</span>
+</code></pre>
+<p>Several endpoints on the Paradex API are paginated over both HTTP and websocket. Pagination on Paradex works by ordering all records descending based on when the records were created. This means all orders are returned in the order they were placed on the orderbook etc. </p>
+
+<p>Each time a request is made to a pagination endpoint, an optional <code>per_page</code> and <code>cursor</code> can be included. This specifies how many records to include and where in the sequence to start. The maximum page limit for each request is <code>100</code> objects. </p>
+
+<p>When a request is made to one of these endpoints the response will includes a <code>next_cursor</code> field. When this cursor is passed to the <code>cursor</code> field in the next request it returns the next page. When all of the records have been traversed, the api will return <code>-1</code> for the next cursor. If this is passed back into the next request, the API will start from the beginning. </p>
+<h1 id='endpoints'>Endpoints</h1><h2 id='get-nonce'>Get Nonce</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/nonce"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'nonce'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span> 
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Basic Access</p>
+
+<p>Gets the current nonce associated with the API key. Used for debugging nonce-related issues.</p>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+The recommended nonce is a unix timestamp at the current moment the request is sent. 
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves all kittens.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<p><code>GET http://api.paradex.io/v2/nonce</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Default</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<p>None</p>
+<h3 id='returns'>Returns</h3>
+<pre class="center-column-code">
+{
+  'nonce': your-nonce
+}
+</pre>
+<h2 id='get-order-expiration-times'>Get Order Expiration Times</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/expirations"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'expirations'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span>
+<span class="p">}</span>
 </code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<p><b>Access Level:</b> Basic Access</p>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>Gets the order expiration times min and max.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
+<p><code>GET http://api.paradex.io/v2/expirations</code> </p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<p>None</p>
+<h3 id='returns-2'>Returns</h3>
+<pre class="center-column-code">
+{
+  'minExpirationMinutes': min-expiration,
+  'maxExpirationMinutes': max-expiration
+}
+</pre>
+<h2 id='get-tokens'>Get Tokens</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/tokens"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'tokens'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span>
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Basic Access</p>
+
+<p>Get all of the tokens listed on paradex. Returns a list of objects with the name symbol and address of each token</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/tokens</code> </p>
+<h3 id='query-parameters-3'>Query Parameters</h3>
+<p>None</p>
+<h3 id='returns-3'>Returns</h3>
+<pre class="center-column-code">
+[
+  {
+    name: 'Wrapped Ether',
+    symbol: 'WETH',
+    address: '0xd0a1e359811322d97991e03f863a0c30c2cf029c'
+  },
+  ...
+]
+</pre>
+<h2 id='get-markets'>Get Markets</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/markets"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'markets'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span>
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Basic Access</p>
+
+<p>Get all of the markets listed on paradex. Returns a list of markets and their key parameters.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/markets</code> </p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<p>None</p>
+<h3 id='returns-4'>Returns</h3>
+<pre class="center-column-code">
+[
+  {
+    id: '1',
+    symbol: 'ZRX/WETH',
+    baseToken: 'ZRX',
+    quoteToken: 'WETH',
+    minOrderSize: '0.001',
+    maxOrderSize: '10000',
+    priceMaxDecimals: 5,
+    amountMaxDecimals: 6
+  },
+  ...
+]
+</pre>
+<h2 id='get-ohlcv'>Get OHLCV</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/ohlcv?market=weth-zrx&amp;period=1d&amp;amount=100"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'ohlcv'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+    <span class="s1">'params'</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s1">'market'</span><span class="p">:</span> <span class="s1">'weth-zrx'</span><span class="p">,</span>
+      <span class="s1">'period'</span><span class="p">:</span> <span class="s1">'1d'</span><span class="p">,</span>
+      <span class="s1">'amount'</span><span class="p">:</span> <span class="mi">100</span>
+    <span class="p">]</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Basic Access</p>
+
+<p>Get open, high, low, close, and volume data for a market. </p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/ohlcv</code> </p>
+<h3 id='query-parameters-5'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Options</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>market</td>
+<td>string</td>
+<td>symbol of the market</td>
+</tr>
+<tr>
+<td>period</td>
+<td>&#39;1m&#39; &#39;5m&#39; &#39;15m&#39; &#39;1h&#39; &#39;6h&#39; &#39;1d&#39;</td>
+<td>time period to fetch ohlcv data</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>int</td>
+<td>how many candles to be returned</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h3 id='returns-5'>Returns</h3>
+<pre class="center-column-code">
+[
+  {
+    id: '1',
+    symbol: 'ZRX/WETH',
+    baseToken: 'ZRX',
+    quoteToken: 'WETH',
+    minOrderSize: '0.001',
+    maxOrderSize: '10000',
+    priceMaxDecimals: 5,
+    amountMaxDecimals: 6
+  },
+  ...
+]
+</pre>
+<h2 id='get-ticker-snapshot'>Get Ticker Snapshot</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/ticker?market=weth-zrx"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'ticker'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span> 
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+    <span class="s1">'params'</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s1">'market'</span><span class="p">:</span> <span class="s1">'weth-zrx'</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">}</span>
 </code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<p><b>Access Level:</b> Basic Access</p>
+
+<p>Gets a ticker snapshot of the specified market </p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/ticker</code> </p>
+<h3 id='query-parameters-6'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Options</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>market</td>
+<td>string</td>
+<td>symbol of the market</td>
+</tr>
+</tbody></table>
+<h3 id='returns-6'>Returns</h3>
+<pre class="center-column-code">
+{
+  'bid': '0.004',
+  'ask': '0.005',
+  'last': '0.0045'
+}
+</pre>
+<h2 id='view-orderbook'>View Orderbook</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/orderbook?market=rep-weth"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'orderbook'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+    <span class="s1">'params'</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s1">'market'</span><span class="p">:</span> <span class="s1">'rep-weth'</span><span class="p">,</span>
+    <span class="p">]</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Basic Access</p>
+
+<p>Gets a snapshot of the order book of the given market</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/orderbook</code> </p>
+<h3 id='query-parameters-7'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>string</td>
+<td>symbol of the market</td>
+</tr>
+</tbody></table>
+<h3 id='returns-7'>Returns</h3>
+<pre class="center-column-code">
+{
+    marketId: 1,
+    marketSymbol: 'REP-WETH',
+    bids:[
+        { amount: '300', price: '0.004' },
+        { amount: '440', price: '0.003' },
+        { amount: '500', price: '0.002' },
+        ...
+    ],
+    asks:[
+        { amount: '200', price: '0.005' },
+        { amount: '360', price: '0.006' },
+        { amount: '445', price: '0.007' },
+        ...
+    ]
+}
+</pre>
+<h2 id='trade-history'>Trade History</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/trade_history?market=rep-weth"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'trade_history'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'GET'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+    <span class="s1">'params'</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s1">'market'</span><span class="p">:</span> <span class="s1">'REP-WETH'</span><span class="p">,</span>
+    <span class="p">]</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Basic Access</p>
+
+<p>Get the trade history of a market</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/trade_history</code> </p>
+<h3 id='query-parameters-8'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>string</td>
+<td>symbol of the market</td>
+</tr>
+</tbody></table>
+<h3 id='returns-8'>Returns</h3>
+<pre class="center-column-code">
+{
+    'id': 1, 
+  'version': '2.0',
+    'result': [
+      {
+            id: 2, 
+            state: 'pending',
+            type: 'buy'|'sell',
+            amount: '10.236319460000000000',
+            price: '0.073249280000000000',
+            baseToken: 'REP',
+            quoteToken: 'ETH',
+            txHash: None,
+            createdAt: "2018-03-09T02:50:27Z"
+            completedAt: None,
+            baseFee: '',
+            tradingFee: '',
+            netAmount: '10.236319460000000000',
+            priceAdjustments: []
+        },
+      ...
+    ]
+}
+
+</pre>
+<h2 id='list-orders'>List Orders</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/orders"</span>
+  -X POST
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+  -H <span class="s2">"HTTP_API_SIG: &lt;payload-signature&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'orders'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span> 
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+  <span class="s1">'sig'</span><span class="p">:</span> <span class="s1">'&lt;payload-signature&gt;'</span><span class="p">,</span>
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+    <span class="s1">'params'</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s1">'market'</span><span class="p">:</span> <span class="s1">'rep-weth'</span><span class="p">,</span>
+      <span class="s1">'state'</span><span class="p">:</span> <span class="s1">'all'</span>
+    <span class="p">]</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Account Access</p>
+
+<p>List orders for your account based on market and order state</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/orders</code> </p>
+<h3 id='query-parameters-9'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>string</td>
+<td>symbol of the market</td>
+</tr>
+<tr>
+<td>state</td>
+<td>&#39;all&#39; &#39;unknown&#39; &#39;open&#39; &#39;expired&#39; &#39;filled&#39; &#39;unfunded&#39; &#39;cancelled&#39;</td>
+<td>order state</td>
+</tr>
+</tbody></table>
+<h3 id='returns-9'>Returns</h3>
+<pre class="center-column-code">
+[
+    {
+        orderParams: {
+            ...
+        },
+        id: 3423,
+        price: '0.078',
+        amount: '100',
+        type: 'buy'|'sell',
+        market: 'REP/WETH',
+        orderHash: 'b41664ebbb46b42fbf32fdce8be3c8df66f354a93dd272e62421e4573a8945d8',
+        state: 'unknown'|'open'|'expired'|'filled'|'unfunded'|'cancelled',
+        amountRemaining: '75',
+        closedAt: None,
+        expiresAt: '2017-11-01T21:24:20Z'
+    },
+    ...
+]
+</pre>
+<h2 id='get-order-by-id'>Get Order by ID</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/get_order/&lt;order-id&gt;"</span>
+  -X POST
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+  -H <span class="s2">"HTTP_API_SIG: &lt;payload-signature&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'get_order/&lt;order_id&gt;'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span> 
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+  <span class="s1">'sig'</span><span class="p">:</span> <span class="s1">'&lt;payload-signature&gt;'</span><span class="p">,</span>
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+    <span class="s1">'params'</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s1">'market'</span><span class="p">:</span> <span class="s1">'REP-WETH'</span>
+      <span class="s1">'state'</span><span class="p">:</span> <span class="s1">'all'</span>
+    <span class="p">]</span>
+
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Account Access</p>
+
+<p>Get an order by its ID</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/get_order</code> </p>
+<h3 id='query-parameters-10'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>string</td>
+<td>symbol of the market</td>
+</tr>
+<tr>
+<td>state</td>
+<td>&#39;all&#39; &#39;unknown&#39; &#39;open&#39; &#39;expired&#39; &#39;filled&#39; &#39;unfunded&#39; &#39;cancelled&#39;</td>
+<td>order state</td>
+</tr>
+</tbody></table>
+<h3 id='returns-10'>Returns</h3>
+<pre class="center-column-code">
+[
+    {
+        orderParams: {
+            ...
+        },
+        id: 3423,
+        price: '0.078',
+        amount: '100',
+        type: 'buy'|'sell',
+        market: 'REP-WETH',
+        orderHash: 'b41664ebbb46b42fbf32fdce8be3c8df66f354a93dd272e62421e4573a8945d8',
+        state: 'unknown'|'open'|'expired'|'filled'|'unfunded'|'cancelled',
+        amountRemaining: '75',
+        closedAt: None,
+        expiresAt: '2017-11-01T21:24:20Z'
+    },
+    ...
+]
+</pre>
+<h2 id='list-order-trades'>List Order Trades</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/get_order/&lt;order-id&gt;/trades"</span>
+  -X POST
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+  -H <span class="s2">"HTTP_API_SIG: &lt;payload-signature&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'get_order/&lt;order_id&gt;/trades'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+  <span class="s1">'sig'</span><span class="p">:</span> <span class="s1">'&lt;payload-signature&gt;'</span><span class="p">,</span>
+  <span class="s1">'params'</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Account Access</p>
+
+<p>List all of the trades associated with a given order</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/get_order</code> </p>
+<h3 id='query-parameters-11'>Query Parameters</h3>
+<p>None</p>
+<h3 id='returns-11'>Returns</h3>
+<pre class="center-column-code">
+[
+    {
+        id: 1, 
+        state: 'confirmed',
+        type: 'buy'|'sell',
+        amount: '0.011986460000000000', 
+        price: '0.073249280000000000', 
+        market: 'REP-WETH'
+        txHash: '0x1234567891234567891234567890000',
+        completedAt: '2017-11-14T23:15:18Z',
+        baseFee: '',
+        tradingFee: '',
+        netAmount: '0.011986460000000000',
+        priceAdjustments: [
+            {
+                id: 2, 
+                state: 'pending', 
+                token: 'REP', 
+                amount: '2.000000000000000000', 
+                completedAt: None, 
+                txHash: '0x234',
+                feeAdjustment: '0E-18',
+                netAmount: '2.000000000000000000'
+            },
+            ...
+        ]
+    }
+]
+</pre>
+<h2 id='list-my-trades'>List My Trades</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/get_trades"</span>
+  -X POST
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+  -H <span class="s2">"HTTP_API_SIG: &lt;payload-signature&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'get_trades'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+  <span class="s1">'sig'</span><span class="p">:</span> <span class="s1">'&lt;payload-signature&gt;'</span><span class="p">,</span>
+  <span class="s1">'params'</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">'market'</span><span class="p">:</span> <span class="s1">'REP-WETH'</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Account Access</p>
+
+<p>Get all of the trades associated with an API key on a given market</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/get_trades</code> </p>
+<h3 id='query-parameters-12'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>string</td>
+<td>symbol of the market</td>
+</tr>
+</tbody></table>
+<h3 id='returns-12'>Returns</h3>
+<pre class="center-column-code">
+[
+  {
+      id: 1, 
+      state: 'confirmed',
+      type: 'buy'|'sell',
+      amount: '0.011986460000000000', 
+      price: '0.073249280000000000', 
+      market: 'REP-WETH', 
+      txHash: '0x1234567891234567891234567890000',
+      createdAt: "2018-03-09T02:50:27Z"
+      completedAt: '2017-11-14T23:15:18Z',
+      baseFee: '',
+      tradingFee: '',
+      netAmount: '0.011986460000000000',
+      priceAdjustments: [
+        {
+            id: 2, 
+            state: 'pending', 
+            token: 'REP', 
+            amount: '2.000000000000000000', 
+            completedAt: None, 
+            txHash: '0x234'
+            feeAdjustment: '0E-18',
+            netAmount: '12.000000000000000000'
+        },
+        ...
+    ]
+  },
+  ...
+]
+</pre>
+<h2 id='balances'>Balances</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/balances"</span>
+  -X POST
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+  -H <span class="s2">"HTTP_API_SIG: &lt;payload-signature&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'balances'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+  <span class="s1">'sig'</span><span class="p">:</span> <span class="s1">'&lt;payload-signature&gt;'</span><span class="p">,</span>
+  <span class="s1">'params'</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Account Access</p>
+
+<p>Get all of the token balances associated with an API key</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/balances</code> </p>
+<h3 id='query-parameters-13'>Query Parameters</h3>
+<p>None</p>
+<h3 id='returns-13'>Returns</h3>
+<pre class="center-column-code">
+[
+    {
+        id: 1
+        name: 'REP'
+        symbol: 'REP'
+        balance: '1234'
+        allowance: '1201'
+    }
+    ...
+]
+</pre>
+<h2 id='get-order-parameters'>Get Order Parameters</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/order_params"</span>
+  -X POST
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+  -H <span class="s2">"HTTP_API_SIG: &lt;payload-signature&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'order_params'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+  <span class="s1">'sig'</span><span class="p">:</span> <span class="s1">'&lt;payload-signature&gt;'</span><span class="p">,</span>
+  <span class="s1">'params'</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">'market'</span><span class="p">:</span> <span class="s1">'REP-WETH'</span><span class="p">,</span>
+    <span class="s1">'orderType'</span><span class="p">:</span> <span class="s1">'buy'</span><span class="p">,</span>
+    <span class="s1">'price'</span><span class="p">:</span> <span class="mf">0.1</span>
+    <span class="s1">'amount'</span><span class="p">:</span> <span class="mi">10</span>
+    <span class="s1">'expirationDate'</span><span class="p">:</span> <span class="s1">'2017-11-14T23:15:18Z'</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Account Access</p>
+
+<p>Get parameters for a zrx order to be signed</p>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/order_params</code> </p>
+<h3 id='query-parameters-14'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>string</td>
+<td>symbol of the market</td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>&#39;buy&#39; &#39;sell&#39;</td>
+<td>type of order</td>
+</tr>
+<tr>
+<td>price</td>
+<td>float</td>
+<td>price in quote currency</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>float</td>
+<td>amount of base currency</td>
+</tr>
+<tr>
+<td>expirationDate</td>
+<td>ISO 8601 time</td>
+<td>expiration date and time of order</td>
+</tr>
+</tbody></table>
+<h3 id='returns-14'>Returns</h3>
+<pre class="center-column-code">
+{
+  fee: { 
+      id: 'b046140686d052fff581f63f8136cce1',
+      baseFeeDecimal: '1.697552694864903098033668128',
+      tradingFeeDecimal: '21.21940868581128872542085161',
+      secundsUntilPrune: 60,
+      pruneUnixTimeStamp: 2017-11-21T18:00:00Z
+  },
+  zrxOrder: {
+      exchangeContractAddress: '0x12459c951127e0c374ff9105dda097662a027093',
+      expirationUnixTimestampSec: '1518124088',
+      feeRecipient: '0x0000000000000000000000000000000000000000',
+      maker: '0x9e56625509c2f60af937f23b7b532600390e8c8b',
+      makerFee: '0',
+      makerTokenAddress: '0xef7fff64389b814a946f3e92105513705ca6b990',
+      makerTokenAmount: '22000000000000000',
+      salt: '54515451557974875123697849345751275676157243756715784155226239582178',
+      taker: '0xa2b31dacf30a9c50ca473337c01d8a201ae33e32',
+      takerFee: '0',
+      takerTokenAddress: '0x323b5d4c32345ced77393b3530b1eed0f346429d',
+      takerTokenAmount: '10000000000000000',
+  }
+}
+
+</pre>
+<h2 id='place-an-order'>Place an Order</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/order"</span>
+  -X POST
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+  -H <span class="s2">"HTTP_API_SIG: &lt;payload-signature&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'order'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+  <span class="s1">'sig'</span><span class="p">:</span> <span class="s1">'&lt;payload-signature&gt;'</span><span class="p">,</span>
+  <span class="s1">'params'</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">'order'</span><span class="p">:</span> <span class="p">{</span> <span class="nx">signed</span> <span class="nx">zrx</span> <span class="nx">order</span> <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Account Access</p>
+
+<p>Submit a signed order to the orderbook</p>
+<h3 id='http-request-15'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/order</code> </p>
+<h3 id='query-parameters-15'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order</td>
+<td>signed zrx order</td>
+<td>signed order to place on the orderbook</td>
+</tr>
+</tbody></table>
+<h3 id='returns-15'>Returns</h3>
+<pre class="center-column-code">
+{
+    'id': 1, 
+  'version': '2.0',
+    'result': {
+      'status': True,
+      'id': 23425
+    }
+}
+</pre>
+<h2 id='cancel-orders'>Cancel Orders</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://api.paradex.io/v2/cancel_orders"</span>
+  -X POST
+  -H <span class="s2">"Content-Type: application/json"</span>
+  -H <span class="s2">"HTTP_API_KEY: &lt;your-api-key&gt;"</span>
+  -H <span class="s2">"HTTP_API_SIG: &lt;payload-signature&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s1">'version'</span><span class="p">:</span> <span class="s1">'2.0'</span>
+    <span class="s1">'type'</span><span class="p">:</span> <span class="s1">'request'</span><span class="p">,</span> 
+    <span class="s1">'target'</span><span class="p">:</span> <span class="s1">'cancel_orders'</span><span class="p">,</span> 
+    <span class="s1">'method'</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span> 
+    <span class="s1">'id'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+  <span class="s1">'sig'</span><span class="p">:</span> <span class="s1">'&lt;payload-signature&gt;'</span><span class="p">,</span>
+  <span class="s1">'params'</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s1">'all'</span><span class="p">:</span> <span class="kc">true</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Account Access</p>
+
+<p>Cancel either all orders, orders based on market, or by id</p>
+<h3 id='http-request-16'>HTTP Request</h3>
+<p><code>GET http://api.paradex.io/v2/cancel_orders</code> </p>
+<h3 id='query-parameters-16'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>all</td>
+<td>boolean (optional)</td>
+<td>cancel all orders</td>
+</tr>
+<tr>
+<td>markets</td>
+<td>list(market_ids)</td>
+<td>list of market symbols to cancel all orders for</td>
+</tr>
+<tr>
+<td>orderIds</td>
+<td>list(order_ids)</td>
+<td>order ids to cancel</td>
+</tr>
+</tbody></table>
+<h3 id='returns-16'>Returns</h3>
+<pre class="center-column-code">
+{
+    'id': 1, 
+  'version': '2.0',
+    'result': { 'cancelled': [1,2...] }
+}
+</pre>
+<h1 id='feeds'>Feeds</h1>
+<p>Included in the Paradex API is a set of powerful feeds for processing trade data for each market, watching the orderbook, and getting a ticker. For each feed once you subscribe you will receive a stream of real-time data from Paradex. </p>
+<h2 id='authentication'>Authentication</h2>
+<p>Authentication for all feeds is the same as normal websocket authentication. The same <code>api_key</code> and/or <code>sig</code> keys are required in the body of the message depending if the feed is basic or account access. See <a href="https://developers.paradex.io/#websocket-api">websocket authentication</a> for more details.</p>
+<h2 id='handling-subscriptions'>Handling Subscriptions</h2><h3 id='new-subscriptions'>New Subscriptions</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">// Subscription</span>
+<span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"subscribe"</span><span class="p">,</span>
+    <span class="s2">"target"</span><span class="p">:</span> <span class="s2">"market_trades"</span><span class="p">,</span>
+    <span class="s2">"params"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"marketIds"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"ZRX-WETH"</span><span class="p">,</span> <span class="s2">"TACO-BELL"</span><span class="p">,</span> <span class="p">...]</span>
+    <span class="p">}</span>
+    <span class="s2">"messageId"</span><span class="p">:</span> <span class="mi">123</span>
+<span class="p">}</span>
+</code></pre>
+<p>All feeds are subscribed to by making a subscribe request. Subscribe request are the same as any other websocket request except the <code>type</code> of the request is <code>subscribe</code> and the <code>target</code> is the feed we are subscribing. </p>
+
+<aside class="notice">
+All feeds time out after 24 hours. If you need to keep the connection open longer, please send a second subscription message.
+</aside>
+
+<p>After subscribing to a feed, a message will be returned with the same message id either confirming or listing errors creating the subscription. When subscribing to multiple feeds some subscriptions might be created successfully while others might fail in the same request. It&#39;s important for clients to handle this behavior accordingly.</p>
+<h3 id='unsubscribing'>Unsubscribing</h3><pre class="highlight javascript tab-javascript"><code><span class="c1">// Unsubscribe</span>
+<span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"unsubscribe"</span><span class="p">,</span>
+    <span class="s2">"target"</span><span class="p">:</span> <span class="s2">"market_trades"</span><span class="p">,</span>
+    <span class="s2">"params"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"marketIds"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"ZRX-WETH"</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="s2">"messageId"</span><span class="p">:</span> <span class="mi">123</span>
+<span class="p">}</span>
+
+<span class="c1">// Unsubscribe all</span>
+<span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"unsubscribe_all"</span><span class="p">,</span>
+    <span class="s2">"target"</span><span class="p">:</span> <span class="s2">"market_trades"</span><span class="p">,</span>
+    <span class="s2">"params"</span><span class="p">:</span> <span class="p">{}</span>
+    <span class="s2">"messageId"</span><span class="p">:</span> <span class="mi">123</span>
+<span class="p">}</span>
+</code></pre>
+<p>Unsubscribing is similar to making a subscription, the only real difference is the <code>type</code> of the message is now either <code>unsubscribe</code> or <code>unsubscribe_all</code>. Unsubscribe specifies the feeds that we are unsubscribing from and unsubscribe all is a catchall that removes all subscriptions. When using the <code>unsubscribe</code> command, specific groups can be included in the parameters (i.e. market ids to unsubscribe from). </p>
+
+<p>After the unsubscribe command executes the API will return a message with the same id and a key <code>success: true | false</code> determining whether the operation was successful. </p>
+<h3 id='listing-active-subscriptions'>Listing Active Subscriptions</h3><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"subscriptions"</span><span class="p">,</span>
+    <span class="s2">"messageId"</span><span class="p">:</span> <span class="mi">123</span>
+<span class="p">}</span>
+</code></pre>
+<p>Along with subscribe and unsubscribe, we also include a function to list subscriptions. This will return all subscriptions going to the current client making it simple to manage all active subscriptions. This endpoint returns the target key and description for each of the subsciptions. This result is first sorted by the key and then by the description. They type of message being returned is <code>subscription_result</code>. </p>
+<h2 id='avaliable-feeds'>Avaliable Feeds</h2><h3 id='ticker'>Ticker</h3><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"subscribe"</span><span class="p">,</span>
+    <span class="s2">"target"</span><span class="p">:</span> <span class="s2">"ticker"</span><span class="p">,</span>
+    <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+    <span class="s2">"params"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"market"</span><span class="p">:</span> <span class="s2">"ZRX-WETH"</span>
+    <span class="p">}</span>
+    <span class="s2">"messageId"</span><span class="p">:</span> <span class="mi">123</span>
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Basic Access</p>
+
+<p>Subscribe to the ticker for an individual market or all markets</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>string</td>
+<td>symbol of the market or <code>all</code> for all markets</td>
+</tr>
+</tbody></table>
+<h3 id='orderbook'>Orderbook</h3><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"subscribe"</span><span class="p">,</span>
+    <span class="s2">"target"</span><span class="p">:</span> <span class="s2">"orderbook"</span><span class="p">,</span>
+    <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+    <span class="s2">"params"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"market"</span><span class="p">:</span> <span class="s2">"ZRX-WETH"</span>
+    <span class="p">}</span>
+    <span class="s2">"messageId"</span><span class="p">:</span> <span class="mi">123</span>
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Basic Access</p>
+
+<p>Subscribe to the orderbook for a given market</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>market</td>
+<td>string</td>
+<td>symbol of the market</td>
+</tr>
+</tbody></table>
+<h3 id='account-trades'>Account Trades</h3><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"subscribe"</span><span class="p">,</span>
+    <span class="s2">"target"</span><span class="p">:</span> <span class="s2">"account_trades"</span><span class="p">,</span>
+    <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+    <span class="s1">'sig'</span><span class="p">:</span> <span class="s1">'&lt;payload-signature&gt;'</span><span class="p">,</span>
+    <span class="s2">"params"</span><span class="p">:</span> <span class="p">{}</span>
+    <span class="s2">"messageId"</span><span class="p">:</span> <span class="mi">123</span>
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Account Access</p>
+
+<p>Subscribe to all of the trades coming from your account. Get updates for when state changes.</p>
+
+<p>Parameters: <code>None</code></p>
+<h3 id='account-orders'>Account Orders</h3><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"subscribe"</span><span class="p">,</span>
+    <span class="s2">"target"</span><span class="p">:</span> <span class="s2">"account_orders"</span><span class="p">,</span>
+    <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+    <span class="s1">'sig'</span><span class="p">:</span> <span class="s1">'&lt;payload-signature&gt;'</span><span class="p">,</span>
+    <span class="s2">"params"</span><span class="p">:</span> <span class="p">{}</span>
+    <span class="s2">"messageId"</span><span class="p">:</span> <span class="mi">123</span>
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Account Access</p>
+
+<p>Subscribe to all of the orders coming from your account. Get updates for when state changes.</p>
+
+<p>Parameters: <code>None</code></p>
+<h3 id='market-trades'>Market Trades</h3><pre class="highlight javascript tab-javascript"><code><span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"unsubscribe"</span><span class="p">,</span>
+    <span class="s2">"target"</span><span class="p">:</span> <span class="s2">"market_trades"</span><span class="p">,</span>
+    <span class="s1">'api_key'</span><span class="p">:</span> <span class="s1">'&lt;your-api-key&gt;'</span><span class="p">,</span>
+    <span class="s1">'sig'</span><span class="p">:</span> <span class="s1">'&lt;payload-signature&gt;'</span><span class="p">,</span>
+    <span class="s2">"params"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"marketIds"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"ZRX-WETH"</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="s2">"messageId"</span><span class="p">:</span> <span class="mi">123</span>
+<span class="p">}</span>
+</code></pre>
+<p><b>Access Level:</b> Account Access</p>
+
+<p>Subscribe to all of the trades happening on a market or multiple markets.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>markets</td>
+<td>list(string)</td>
+<td>list of markets to subscribe</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
-<p>The Kittn API uses the following error codes:</p>
+<p>The Paradex API uses the following error codes. Codes will be returned with an error message useful for debugging.</p>
 
 <table><thead>
 <tr>
@@ -463,48 +1440,104 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 </thead><tbody>
 <tr>
-<td>400</td>
-<td>Bad Request -- Your request is invalid.</td>
+<td>100</td>
+<td>Validation Failed</td>
 </tr>
 <tr>
-<td>401</td>
-<td>Unauthorized -- Your API key is wrong.</td>
+<td>101</td>
+<td>Malformed Input</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>102</td>
+<td>Order Submission Disabled</td>
 </tr>
 <tr>
-<td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>103</td>
+<td>Throttled</td>
 </tr>
 <tr>
-<td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>104</td>
+<td>Invalid API Key</td>
 </tr>
 <tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
+<td>105</td>
+<td>Invalid API Ethereum Address</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>106</td>
+<td>Invalid Sig</td>
 </tr>
 <tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td>107</td>
+<td>Invalid Nonce</td>
 </tr>
 <tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>108</td>
+<td>Server Error</td>
 </tr>
 <tr>
-<td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>109</td>
+<td>Max Decimals</td>
 </tr>
 <tr>
-<td>503</td>
-<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+<td>110</td>
+<td>Unviable Order</td>
+</tr>
+<tr>
+<td>111</td>
+<td>Read Only Region</td>
+</tr>
+<tr>
+<td>112</td>
+<td>Market Suspended</td>
+</tr>
+<tr>
+<td>113</td>
+<td>Not Authorized Account</td>
+</tr>
+<tr>
+<td>114</td>
+<td>Basic Authorization Required</td>
+</tr>
+<tr>
+<td>115</td>
+<td>Account Authorization Required</td>
+</tr>
+<tr>
+<td>118</td>
+<td>Payload Missing Field</td>
+</tr>
+<tr>
+<td>119</td>
+<td>Incorrect Field Format</td>
+</tr>
+<tr>
+<td>120</td>
+<td>Invalid Address</td>
+</tr>
+<tr>
+<td>121</td>
+<td>Address Not Supported</td>
+</tr>
+<tr>
+<td>122</td>
+<td>Value Out of Range</td>
+</tr>
+<tr>
+<td>123</td>
+<td>Invalid ECDSA or Hash</td>
+</tr>
+<tr>
+<td>124</td>
+<td>Unsupported Option</td>
+</tr>
+<tr>
+<td>125</td>
+<td>Address Unverified</td>
+</tr>
+<tr>
+<td>126</td>
+<td>Market Not Found</td>
 </tr>
 </tbody></table>
 
@@ -512,9 +1545,6 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="curl">curl</a>
-                <a href="#" data-language-name="Ruby">Ruby</a>
-                <a href="#" data-language-name="Python">Python</a>
-                <a href="#" data-language-name="Javascript">Javascript</a>
           </div>
       </div>
     </div>
